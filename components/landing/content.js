@@ -70,6 +70,30 @@ export const sectors = [
   },
 ];
 
+export const sectorStories = [
+  {
+    image: "/images/farmacia.png",
+    alt: "Farmacêutica e consultor analisando documentos em uma farmácia",
+    eyebrow: "Farmácias",
+    title: "Rotinas fiscais e documentais perto da operação.",
+    text: "Apoio para organizar documentos, obrigações e controles sem tirar o foco do atendimento ao cliente.",
+  },
+  {
+    image: "/images/gestao_clinica.png",
+    alt: "Gestora e profissional de saúde analisando documentos em uma clínica",
+    eyebrow: "Clínicas",
+    title: "Gestão administrativa com linguagem simples.",
+    text: "Clínicas e serviços de saúde precisam de regularidade, previsibilidade e processos que caibam na rotina.",
+  },
+  {
+    image: "/images/terceirosetor.png",
+    alt: "Grupo diverso reunido em uma associação para análise administrativa",
+    eyebrow: "Terceiro setor",
+    title: "Prestação de contas com participação e clareza.",
+    text: "Associações, ONGs, igrejas e cooperativas ganham segurança quando documentos e decisões ficam organizados.",
+  },
+];
+
 export const methodSteps = [
   {
     title: "1. Leitura da realidade",
