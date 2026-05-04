@@ -1,9 +1,9 @@
 export const navItems = [
-  ["Soluções", "#solucoes"],
-  ["Setores", "#setores"],
-  ["Método", "#metodo"],
-  ["Benefícios", "#beneficios"],
-  ["Conteúdos", "#conteudos"],
+  ["Soluções", "/#solucoes"],
+  ["Setores", "/#setores"],
+  ["Método", "/#metodo"],
+  ["Benefícios", "/#beneficios"],
+  ["Blog", "/blog"],
 ];
 
 export const solutions = [

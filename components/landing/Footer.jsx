@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { navItems } from "@/components/landing/content";
 
 const footerServices = [
@@ -26,9 +27,9 @@ export default function Footer() {
           <p className="eyebrow">Suda Core</p>
           <h2>Gestão, regularidade e conformidade para decisões mais seguras.</h2>
         </div>
-        <a className="button primary" href="#contato">
+        <Link className="button primary" href="/#contato">
           Solicitar diagnóstico
-        </a>
+        </Link>
       </div>
 
       <div className="footer-main">
@@ -43,11 +44,11 @@ export default function Footer() {
 
         <FooterColumn title="Navegação">
           {navItems.map(([label, href]) => (
-            <a href={href} key={href}>
+            <Link href={href} key={href}>
               {label}
-            </a>
+            </Link>
           ))}
-          <a href="#contato">Contato</a>
+          <Link href="/#contato">Contato</Link>
         </FooterColumn>
 
         <FooterColumn title="Soluções">
@@ -65,7 +66,7 @@ export default function Footer() {
         <FooterColumn title="Contato">
           <span>Atendimento inicial pelo formulário da página.</span>
           <span>Diagnóstico para entender cenário, riscos e próximos passos.</span>
-          <a href="#contato">Falar com a Suda Core</a>
+          <Link href="/#contato">Falar com a Suda Core</Link>
         </FooterColumn>
       </div>
 

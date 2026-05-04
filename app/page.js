@@ -1,5 +1,7 @@
 import LandingPage from "@/components/LandingPage";
+import { getSortedPostsData } from "@/lib/markdown";
 
 export default function Home() {
-  return <LandingPage />;
+  const posts = getSortedPostsData();
+  return <LandingPage posts={posts} />;
 }

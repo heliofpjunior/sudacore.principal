@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { navItems } from "@/components/landing/content";
 
 export default function Header() {
@@ -12,9 +13,9 @@ export default function Header() {
 
   return (
     <header className={`site-header ${menuOpen ? "menu-open" : ""}`}>
-      <a className="brand" href="#inicio" aria-label="Suda Core" onClick={closeMenu}>
+      <Link href="/" className="brand" aria-label="Suda Core" onClick={closeMenu}>
         <img src="/logo/horizontal.svg" alt="Suda Core" />
-      </a>
+      </Link>
 
       <button
         className="menu-toggle"
@@ -30,15 +31,15 @@ export default function Header() {
 
       <nav className="site-nav" aria-label="Navegação principal">
         {navItems.map(([label, href]) => (
-          <a href={href} key={href} onClick={closeMenu}>
+          <Link href={href} key={href} onClick={closeMenu}>
             {label}
-          </a>
+          </Link>
         ))}
       </nav>
 
-      <a className="header-cta" href="#contato" onClick={closeMenu}>
+      <Link href="/#contato" className="header-cta" onClick={closeMenu}>
         Fale conosco
-      </a>
+      </Link>
     </header>
   );
 }

@@ -9,7 +9,7 @@ import InsightsSection from "@/components/landing/InsightsSection";
 import MethodSection from "@/components/landing/MethodSection";
 import SolutionsSection from "@/components/landing/SolutionsSection";
 
-export default function LandingPage() {
+export default function LandingPage({ posts }) {
   return (
     <>
       <Header />
@@ -20,7 +20,7 @@ export default function LandingPage() {
         <MethodSection />
         <DiagnosticSection />
         <BenefitsSection />
-        <InsightsSection />
+        <InsightsSection posts={posts} />
         <ContactSection />
       </main>
       <Footer />
