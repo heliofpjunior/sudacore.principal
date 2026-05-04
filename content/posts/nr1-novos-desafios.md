@@ -1,9 +1,10 @@
 ---
 title: "NR 1 e Riscos Psicossociais: O Novo Desafio do GRO"
 date: "2026-05-04"
+category: "Benefícios"
 excerpt: "Entenda as dificuldades de interpretação da nova norma e como implementar os riscos psicossociais no seu Gerenciamento de Riscos Ocupacionais."
 coverImage: "/images/image_dncfaidncfaidncf.png"
-author: "Equipe Sudacore"
+author: "Hélio Pires"
 ---
 
 # NR 1 e Riscos Psicossociais: O Novo Desafio do GRO

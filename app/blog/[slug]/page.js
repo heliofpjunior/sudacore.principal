@@ -67,9 +67,10 @@ export default async function Post({ params }) {
       />
       <Header />
       <article className="blog-container" style={{ backgroundColor: 'white' }}>
-        <Link href="/blog" className="blog-link" style={{ marginBottom: '40px' }}>
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ transform: 'rotate(180deg)' }}>
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="9 5l7 7-7 7" />
+        <Link href="/blog" className="blog-back-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
           Voltar para o Blog
         </Link>
@@ -79,7 +80,7 @@ export default async function Post({ params }) {
             src={postData.coverImage} 
             alt={postData.title} 
             className="blog-card-image"
-            style={{ height: 'auto', maxHeight: '500px', borderRadius: '24px', marginBottom: '48px', boxShadow: 'var(--shadow)' }}
+            style={{ height: 'auto', maxHeight: '500px', borderRadius: '24px', marginBottom: '40px', boxShadow: 'var(--shadow)' }}
           />
         )}
 
