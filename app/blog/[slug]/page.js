@@ -1,8 +1,8 @@
-import ReactMarkdown from 'react-markdown';
 import { getPostData, getSortedPostsData } from '../../../lib/markdown';
 import Link from 'next/link';
 import Header from '../../../components/landing/Header';
 import Footer from '../../../components/landing/Footer';
+import MarkdownRenderer from '../../../components/blog/MarkdownRenderer';
 
 export async function generateStaticParams() {
   const posts = getSortedPostsData();
@@ -101,7 +101,7 @@ export default async function Post({ params }) {
         </header>
 
         <div className="blog-content">
-          <ReactMarkdown>{postData.content}</ReactMarkdown>
+          <MarkdownRenderer content={postData.content} />
         </div>
 
         {relatedPosts.length > 0 && (
