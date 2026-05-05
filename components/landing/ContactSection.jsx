@@ -5,11 +5,37 @@ import { organizationTypes } from "@/components/landing/content";
 
 export default function ContactSection() {
   const [formStatus, setFormStatus] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    event.currentTarget.reset();
-    setFormStatus("Recebemos sua solicitação. A equipe Suda Core retornará em breve.");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setIsSubmitting(true);
+    setFormStatus("Enviando sua solicitação...");
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/heliofpjunior@gmail.com", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error("FormSubmit request failed");
+      }
+
+      form.reset();
+      setFormStatus("Recebemos sua solicitação. A equipe Suda Core retornará em breve.");
+    } catch {
+      setFormStatus("Não foi possível enviar agora. Tente novamente em instantes.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -25,6 +51,10 @@ export default function ContactSection() {
       </div>
 
       <form className="contact-form" onSubmit={handleSubmit}>
+        <input type="hidden" name="_subject" value="Novo contato pelo site Suda Core" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="_honey" style={{ display: "none" }} tabIndex="-1" />
         <label>
           Nome
           <input type="text" name="nome" autoComplete="name" required />
@@ -52,8 +82,8 @@ export default function ContactSection() {
           Mensagem
           <textarea name="mensagem" rows="4" />
         </label>
-        <button className="button primary" type="submit">
-          Solicitar diagnóstico
+        <button className="button primary" type="submit" disabled={isSubmitting}>
+          {isSubmitting ? "Enviando..." : "Solicitar diagnóstico"}
         </button>
         <p className="form-status" role="status" aria-live="polite">
           {formStatus}
