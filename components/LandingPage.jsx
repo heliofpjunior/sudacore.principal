@@ -14,13 +14,13 @@ export default function LandingPage({ posts }) {
     <>
       <Header />
       <main>
+        <InsightsSection posts={posts} />
         <HeroSection />
         <SolutionsSection />
         <AudienceSection />
         <MethodSection />
         <DiagnosticSection />
         <BenefitsSection />
-        <InsightsSection posts={posts} />
         <ContactSection />
       </main>
       <Footer />
