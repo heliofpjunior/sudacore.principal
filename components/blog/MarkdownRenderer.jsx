@@ -82,9 +82,11 @@ function Heading({ as: Tag, children }) {
   );
 }
 
-function MarkdownLink({ href = '', children, ...props }) {
+function MarkdownLink({ href = '', children, title, className: linkClassName, ...props }) {
   const label = getNodeText(children).trim().toLowerCase();
   const youTubeId = getYouTubeId(href);
+  const isCta = title?.toLowerCase().split(/\s+/).includes('cta');
+  const className = isCta ? 'markdown-cta-button' : linkClassName;
   const shouldEmbedVideo = youTubeId && ['youtube', 'video', 'vídeo'].includes(label);
 
   if (shouldEmbedVideo) {
@@ -95,14 +97,14 @@ function MarkdownLink({ href = '', children, ...props }) {
 
   if (isInternal) {
     return (
-      <Link href={href} {...props}>
+      <Link href={href} className={className} {...props}>
         {children}
       </Link>
     );
   }
 
   return (
-    <a href={href} target="_blank" rel="noreferrer" {...props}>
+    <a href={href} title={isCta ? undefined : title} className={className} target="_blank" rel="noreferrer" {...props}>
       {children}
     </a>
   );

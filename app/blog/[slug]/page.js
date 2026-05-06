@@ -92,9 +92,6 @@ export default async function Post({ params }) {
             <span style={{ color: 'var(--line)', fontSize: '0.8rem' }}>|</span>
             <span style={{ fontSize: '0.9rem', color: 'var(--muted)' }}>{postData.readingTime}</span>
           </div>
-          <h1 className="blog-title" style={{ marginBottom: '16px', marginTop: '0' }}>
-            {postData.title}
-          </h1>
           <div className="blog-post-meta">
             Escrito por {postData.author}
           </div>
