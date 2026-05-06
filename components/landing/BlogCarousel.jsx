@@ -71,6 +71,19 @@ export default function BlogCarousel({ posts = [] }) {
             </div>
             <h3>{activePost.title}</h3>
             {activePost.excerpt && <p>{activePost.excerpt}</p>}
+            
+            <div className="blog-carousel-cta">
+              <span className="button secondary ghost">Ler artigo completo</span>
+            </div>
+
+            <div className="blog-carousel-indicators">
+              {featuredPosts.map((_, index) => (
+                <div 
+                  key={index} 
+                  className={`indicator-bar ${index === activeIndex ? "active" : ""}`}
+                />
+              ))}
+            </div>
           </div>
         </Link>
 
